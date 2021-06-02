@@ -6,9 +6,12 @@ on:
   push:
     branches:
       - "master"
+#on:
+#  schedule:
+#    - cron: '0 2 * * *' # run at 2 AM UTC
 
 jobs:
-  pre-release:
+  pre-release: # nightly: 
     name: "Pre Release"
     runs-on: "ubuntu-latest"
     container: "debian:bullseye-slim"
