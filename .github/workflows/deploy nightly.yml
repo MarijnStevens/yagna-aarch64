@@ -50,10 +50,9 @@ jobs:
           
       - run: ./build-release-artifact.sh
           
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.TOKEN }}"
-          prerelease: true
-          files: |
-            LICENSE.txt
-            yagna.tar.gz
+          artifacts: "yagna.tar.gz,LICENSE.txt"
+          bodyFile: "Nighty Build"
+          token: ${{ secrets.TOKEN }}
+        
