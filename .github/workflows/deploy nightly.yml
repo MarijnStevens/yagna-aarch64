@@ -39,7 +39,14 @@ jobs:
       
       - run: ./init-repo.sh
       
-      - run: ./build-all.sh
+      - name: "yagna"
+        run: ./build.sh yagna
+            
+      - name: "ya-runtime-vm"
+        run: ./build.sh ya-runtime-vm
+      
+      - name: "ya-runtime-wasi"
+        run: ./build.sh ya-runtime-wasi
           
       - run: ./build-release-artifact.sh
           
