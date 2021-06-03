@@ -29,14 +29,13 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-      
-      - name: "Build"
-        run: |
-          ./init-repo.sh
-          ./build-all.sh
-          ./build-release-artifact.sh
-          echo "done!"
-
+  
+      - run: ./init-repo.sh
+          
+      - run: ./build-all.sh
+          
+      - run: ./build-release-artifact.sh
+         
       - uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.TOKEN }}"
