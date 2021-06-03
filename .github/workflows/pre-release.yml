@@ -32,6 +32,7 @@ jobs:
       
       - name: "Build"
         run: |
+          ./init-repo.sh
           ./build-all.sh
           ./build-release-artifact.sh
           echo "done!"
