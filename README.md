@@ -1,4 +1,3 @@
-
 ![Golem ARM](static/banner.png)
 
 
