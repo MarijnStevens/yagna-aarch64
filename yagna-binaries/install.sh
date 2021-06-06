@@ -48,7 +48,7 @@ chmod +x ./golemsp
 chmod +x ./ya-provider
 chmod +x ./yagna
 chmod +x ./gftp
-chmod +x ./exe-unit 
+chmod +x ./exe-unit
 chmod +x ./plugins/ya-runtime-wasi
 chmod +x ./plugins/ya-runtime-vm-aarch64-host/ya-runtime-vm-aarch64-host
 
@@ -69,7 +69,7 @@ rm $installPrefix/lib/yagna/plugins/ya-runtime-wasi && update
 #
 # We can use symlinks for everything else, except for ya-runtime-aarch64-host.
 
-# KVM Permissions: 
+# KVM Permissions:
 # sudo adduser $(whoami) kvm
 
 # Binaries
@@ -94,6 +94,9 @@ echo ""
 echo ""
 echo "Make sure you have libpixman-1-0 installed. If not: "
 echo "$ sudo apt-get install libpixman-1-0"
+echo ""
+echo "Add the following to .bashrc to use golemsp and yagna: "
+echo "export PATH=$PATH:/home/$USER/.local/bin"
 echo ""
 echo "The current user: $(whoami) requires to be able to access the KVM."
 echo "$ sudo adduser $(whoami) kvm"
