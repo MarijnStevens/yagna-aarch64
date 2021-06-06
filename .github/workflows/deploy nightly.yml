@@ -3,14 +3,6 @@ name: "Deploy Nightly"
 on:
   schedule:
     - cron: '0 2 * * *' # run at 2 AM UTC
-  workflow_dispatch:
-    inputs:
-      logLevel:
-        description: 'Log level'     
-        required: true
-        default: 'warning'
-      tags:
-        description: 'Test scenario tags'  
 
 jobs:
   check_date:
@@ -32,33 +24,20 @@ jobs:
   nightly: 
     name: Deploy nightly
     runs-on: "ubuntu-latest"
-    container: "debian:bullseye-slim"
+    container: "marijnstevens/yagna-aarch64-build-system"
     needs: check_date
     if: ${{ needs.check_date.outputs.should_run != 'false' }}
     
     steps:
-      - run: "apt-get update && apt-get install -y --no-install-recommends git locate curl sudo build-essential ca-certificates git make python3 pkg-config nettle-dev ninja-build"
-  
-      - run: "curl https://sh.rustup.rs -sSf | sh -s -- -y"      
-      
-      - run: 'echo "/__w/_temp/_github_home/.cargo/bin/" >> $GITHUB_PATH'
-         
-      - run: "rustup target install aarch64-unknown-linux-gnu"
-       
-      - run: "dpkg --add-architecture arm64"  
-      
-      - run: "apt-get install  -y --no-install-recommends crossbuild-essential-arm64 gcc-10-aarch64-linux-gnu && sudo apt-get update"
-      
-      - run: "apt-get install  -y --no-install-recommends libssl-dev:arm64 libcap-ng-dev:arm64 libpixman-1-dev:arm64 libglib2.0-dev:arm64 libbz2-dev:arm64 liblzo2-dev:arm64 librdmacm-dev:arm64"
-
       - uses: actions/checkout@v2
         with:
             submodules: recursive
       
-      - name: Run latest-tag
+      - name: Stamp nightly-tag
         uses: EndBug/latest-tag@latest
         with:
-          description: Update latest tag.
+          tag-name: nightly
+          description: Update nightly tag.
 
       - run: ./init-repo.sh
       
