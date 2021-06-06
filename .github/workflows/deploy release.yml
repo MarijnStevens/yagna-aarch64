@@ -4,10 +4,6 @@ on:
   push:
     tags:
     - '*'
-  workflow_dispatch:
-    inputs:
-      tag:
-        description: 'Tag'  
     
 jobs:
   release: 
@@ -33,6 +29,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
+          
+      - name: Stamp nightly-tag
+        uses: EndBug/latest-tag@latest
+        with:
+          tag-name: nightly
+          description: Update nightly tag.
           
       - run: ./init-repo.sh
       
