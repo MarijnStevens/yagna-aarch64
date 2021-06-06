@@ -48,6 +48,7 @@ chmod +x ./golemsp
 chmod +x ./ya-provider
 chmod +x ./yagna
 chmod +x ./gftp
+chmod +x ./exe-unit 
 chmod +x ./plugins/ya-runtime-wasi
 chmod +x ./plugins/ya-runtime-vm-aarch64-host/ya-runtime-vm-aarch64-host
 
@@ -76,9 +77,6 @@ ln -sf $PWD/golemsp $installPrefix/bin/golemsp && update
 ln -sf $PWD/ya-provider $installPrefix/bin/ya-provider && update
 ln -sf $PWD/yagna $installPrefix/bin/yagna && update
 ln -sf $PWD/gftp $installPrefix/bin/gftp && update
-ln -sf $PWD/libgftp.rlib $installPrefix/bin/libgftp.rlib && update
-ln -sf $PWD/libya_exe_unit.rlib $installPrefix/bin/libya_exe_unit.rlib && update
-ln -sf $PWD/libya_provider.rlib $installPrefix/bin/libya_provider.rlib && update
 
 # plugins
 ln -sf $PWD/exe-unit $installPrefix/lib/yagna/plugins/exe-unit && update
