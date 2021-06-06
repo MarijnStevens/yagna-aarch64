@@ -4,12 +4,10 @@
   <a href='https://golem.network/'><img
       width='500px'
       alt=''
-      src="https://raw.githubusercontent.com/MarijnStevens/yagna-aarch64/master/static/banner.PNG" /></a>
+      src="https://raw.githubusercontent.com/MarijnStevens/yagna-aarch64/master/.github/images/banner.png" /></a>
   <br/>A flexible, open-source platform for democratised access to digital resources.
 </a>
 </h5>
-
-[![Deploy Nightly](https://github.com/MarijnStevens/yagna-aarch64/actions/workflows/deploy%20nightly.yml/badge.svg)](https://github.com/MarijnStevens/yagna-aarch64/actions/workflows/deploy%20nightly.yml)
 
 <p align="center">  
     <a href="https://github.com/MarijnStevens/yagna-aarch64/actions/workflows/deploy%20nightly.yml/badge.svg" alt="CI">
@@ -21,8 +19,5 @@
     <a href="https://discord.gg/y29dtcM" alt="Discord">
         <img src="https://img.shields.io/discord/684703559954333727?logo=discord" /></a>     
 </p>
-
-![Golem ARM](static/banner.png)
-
 
 [ DO NOT USE | UNSTABLE | TESTING ONLY ]
