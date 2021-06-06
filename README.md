@@ -2,7 +2,6 @@
 
 <h5 align="center">
   <a href='https://golem.network/'><img
-      width='500px'
       alt=''
       src="https://raw.githubusercontent.com/MarijnStevens/yagna-aarch64/master/.github/images/banner.png" /></a>
   <br/>A flexible, open-source platform for democratised access to digital resources.
