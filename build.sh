@@ -22,3 +22,6 @@ if [[ $target == "ya-runtime-wasi" ]] ; then
 	cd ya-runtime-wasi && chmod +x ./build.sh && ./build.sh && cd ..
 fi
 
+if [ $? -nq 0 ]; then 
+	exit $?
+fi
