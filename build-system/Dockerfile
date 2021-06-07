@@ -22,12 +22,9 @@ RUN apt update && \
         liblzo2-dev:arm64 \
         librdmacm-dev:arm64
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+RUN curl https://sh.rustup.rs -sSf | bash -s -- -y
 
-ENV PATH "/root/.cargo/bin/:$PATH"
+RUN echo 'source $HOME/.cargo/env' >> $HOME/.bashrc
+ENV PATH="/root/.cargo/bin:${PATH}"
 
 RUN rustup target install aarch64-unknown-linux-gnu
-
-RUN rustup toolchain install stable
-
-RUN rustup default stable-aarch64-unknown-linux-gnu
