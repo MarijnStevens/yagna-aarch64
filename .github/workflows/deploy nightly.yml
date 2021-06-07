@@ -39,7 +39,7 @@ jobs:
           tag-name: nightly
           description: Update nightly tag.
 
-      - run: ./init-repo.sh
+      - run: ./init-submodules.sh
       
       - name: "yagna"
         run: ./build.sh yagna
