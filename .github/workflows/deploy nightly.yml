@@ -29,6 +29,12 @@ jobs:
     if: ${{ needs.check_date.outputs.should_run != 'false' }}
     
     steps:
+      - run: "curl https://sh.rustup.rs -sSf | sh -s -- -y"      
+      
+      - run: 'echo "/__w/_temp/_github_home/.cargo/bin/" >> $GITHUB_PATH'
+         
+      - run: "rustup target install aarch64-unknown-linux-gnu"
+      
       - uses: actions/checkout@v2
         with:
             submodules: recursive
