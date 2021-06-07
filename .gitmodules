@@ -1,11 +1,9 @@
-[submodule "ya-runtime-vm"]
-	path = ya-runtime-vm
-	url = git@github.com:MarijnStevens/ya-runtime-vm.git
-
-
 [submodule "yagna"]
 	path = yagna
 	url = git@github.com:MarijnStevens/yagna.git
+[submodule "ya-runtime-vm"]
+	path = ya-runtime-vm
+	url = git@github.com:MarijnStevens/ya-runtime-vm.git
 [submodule "ya-runtime-wasi"]
 	path = ya-runtime-wasi
 	url = git@github.com:MarijnStevens/ya-runtime-wasi.git
