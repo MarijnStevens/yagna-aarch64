@@ -1,40 +1,39 @@
 name: "Deploy Release"
 
-on: 
+on:
   push:
     tags:
     - '*'
-    
+
 jobs:
-  release: 
+  release:
     name: Deploy release
     runs-on: "ubuntu-latest"
     container: "marijnstevens/yagna-aarch64-build-system"
-    
-    steps:           
+
+    steps:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
-          
-      - name: Stamp nightly-tag
+
+      - name: Stamp latest tag
         uses: EndBug/latest-tag@latest
         with:
-          tag-name: nightly
-          description: Update nightly tag.
-          
+          description: Update latest tag.
+
       - run: ./init-submodules.sh
-      
+
       - name: "yagna"
         run: ./build.sh yagna
-            
+
       - name: "ya-runtime-vm"
         run: ./build.sh ya-runtime-vm
-      
+
       - name: "ya-runtime-wasi"
         run: ./build.sh ya-runtime-wasi
-          
+
       - run: ./build-release-artifact.sh
-          
+
       - uses: actions/create-release@v1
         id: create_release
         with:
@@ -45,7 +44,7 @@ jobs:
           body: ""
         env:
           GITHUB_TOKEN: ${{ github.TOKEN }}
-        
+
       - uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -54,4 +53,4 @@ jobs:
           asset_path: yagna.tar.gz
           asset_name: yagna.tar.gz
           asset_content_type: application/gzip
-      
+
