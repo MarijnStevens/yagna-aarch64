@@ -9,19 +9,15 @@ fi
 
 if [[ $target == "yagna" ]] ; then
 	echo "Building yagna..." && \
-	cd yagna && chmod +x ./build.sh && ./build.sh  && cd ..
+	cd yagna && chmod +x ./build.sh && ./build.sh  && cd .. || exit 1
 fi
 
 if [[ $target == "ya-runtime-vm" ]] ; then
 	echo "Building ya-runtime-vm..." && \
-	cd ya-runtime-vm && chmod +x ./build.sh && ./build.sh && cd ..
+	cd ya-runtime-vm && chmod +x ./build.sh && ./build.sh && cd .. || exit 1
 fi
 
 if [[ $target == "ya-runtime-wasi" ]] ; then
 	echo "Building ya-runtime-wasi..."
-	cd ya-runtime-wasi && chmod +x ./build.sh && ./build.sh && cd ..
-fi
-
-if [ $? -nq 0 ]; then 
-	exit $?
+	cd ya-runtime-wasi && chmod +x ./build.sh && ./build.sh && cd .. || exit 1
 fi
