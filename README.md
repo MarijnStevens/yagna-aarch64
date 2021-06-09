@@ -35,7 +35,7 @@ This build is for 64 bit arm architecture, also known as aarch64. This has been 
 
 Note: Current build requires 2.29 of GLIBC.
 
-1. `wget https://github.com/MarijnStevens/yagna-aarch64/releases/tag/v0.6.7-beta.1.009 && tar -xf yagna.tar.gz`
+1. `wget https://github.com/MarijnStevens/yagna-aarch64/releases/download/v0.6.7-beta.1.032/yagna.tar.gz && tar -xf yagna.tar.gz && rm yagna.tar.gz`
 2. `cd ./yagna-binaries/`
 3. `chmod +x ./install.sh`
 4. `./install.sh` and follow the instructions
