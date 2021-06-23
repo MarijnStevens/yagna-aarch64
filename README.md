@@ -1,7 +1,8 @@
 ## Golem ARM
+<h1 align="center">[ DO NOT USE | UNSTABLE | TESTING ONLY ]</h1>
 
 <h5 align="center">
-[ DO NOT USE | UNSTABLE | TESTING ONLY ] <br/>
+
   <a href='https://golem.network/'><img
       width='500px'
       alt=''
